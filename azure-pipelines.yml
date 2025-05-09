@@ -11,7 +11,7 @@ pool: Java-agent-pool
 steps:
 - task: Maven@4
   inputs:
-    azureSubscription: 'Azure subscription 1 (4ac40ced-d972-479e-81cc-8f33502d1ea9)'
+    #azureSubscription: 'Azure subscription 1 (4ac40ced-d972-479e-81cc-8f33502d1ea9)'
     mavenPomFile: 'pom.xml'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
