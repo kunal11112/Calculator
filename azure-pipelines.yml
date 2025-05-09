@@ -9,13 +9,18 @@ trigger:
 pool: Java-agent-pool
 
 steps:
-- task: Maven@3
+- task: Maven@4
   inputs:
+    azureSubscription: 'Azure subscription 1 (4ac40ced-d972-479e-81cc-8f33502d1ea9)'
     mavenPomFile: 'pom.xml'
-    mavenOptions: '-Xmx3072m'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'package'
+    javaHomeOption: 'JDKVersion'
+    mavenVersionOption: 'Default'
+    mavenOptions: '-Xmx3072m'
+    mavenAuthenticateFeed: false
+    effectivePomSkip: false
+    sonarQubeRunAnalysis: false
 
 - task: PublishBuildArtifacts@1
   inputs:
