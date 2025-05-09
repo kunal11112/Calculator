@@ -19,5 +19,5 @@ steps:
 
 - task: PublishPipelineArtifact@1
   inputs:
-    path: $(Build.ArtifactStagingDirectory)
+    path: $(Build.ArtifactStagingDirectory)/Calculator-1.0-SNAPSHOT.jar
     artifact: calculator.jar
